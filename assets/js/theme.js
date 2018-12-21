@@ -2396,6 +2396,7 @@ var _prestashop2 = _interopRequireDefault(_prestashop);
   createInputFile();
   coverImage();
   imageScrollBox();
+  handleVariantChange();
 
   _prestashop2['default'].on('updatedProduct', function (event) {
     createInputFile();
@@ -2420,6 +2421,8 @@ var _prestashop2 = _interopRequireDefault(_prestashop);
       (0, _jquery2['default'])(event.target).addClass('selected');
       (0, _jquery2['default'])('.js-qv-product-cover').prop('src', (0, _jquery2['default'])(event.currentTarget).data('image-large-src'));
     });
+
+    handleVariantChange();
   }
 
   function imageScrollBox() {
@@ -2473,6 +2476,13 @@ var _prestashop2 = _interopRequireDefault(_prestashop);
         eventType: 'updatedProductQuantity',
         event: e
       });
+    });
+  }
+
+  function handleVariantChange() {
+    _prestashop2['default'].on('updateProduct', function () {
+      (0, _jquery2['default'])('.column-left .product-cover .layer').css("opacity", "1");
+      (0, _jquery2['default'])('.product-cover .material-icons').html("sync");
     });
   }
 });

@@ -1,4 +1,8 @@
 #products,.featured-products,.product-accessories,.product-miniature  {
+  .color {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   .products {
     display: flex;
     flex-wrap: wrap;
@@ -17,18 +21,16 @@
   .thumbnail-container {
     position: relative;
     margin-bottom: 1.563rem;
-    height: 318px;
-    width: 257px;
     background: white;
     @include box-shadow;
     &:hover, &:focus {
       .highlighted-informations {
-        bottom: 5.5rem;
+        bottom: 4.9rem;
         &::after {
           opacity: 1;
         }
         &.no-variants{
-          bottom: 4.2rem;
+          bottom: 4.9rem;
         }
       }
       .product-description::after{
@@ -49,7 +51,6 @@
   .product-title {
     text-align: center;
     text-transform: capitalize;
-    margin-top: 1rem;
   }
   .product-price-and-shipping {
     color: $gray-darker;
@@ -67,15 +68,17 @@
   }
   .highlighted-informations {
     position: absolute;
-    bottom: 1.25rem;
-    padding-top: 0.625rem;
+    bottom: 0;
     z-index: 0;
     background: white;
     text-align: center;
-    width: 257px;
-    height: 3.125rem;
+    min-height: 3.125rem;
     box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.2);
     transition: bottom .3s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .quick-view {
       color: $gray;
       font-size: $base-font-size;
@@ -84,21 +87,19 @@
       }
     }
   }
-
   .product-description {
     position: absolute;
     z-index: 1;
     background: white;
-    width: 257px;
     bottom: 0;
-    height: 70px;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   img {
-    margin-left: 4px;
+    width: 100%;
   }
-
   .product-miniature {
-    margin: 0 0.625rem;
     .discount {
       display: none;
     }
@@ -168,7 +169,6 @@
     margin-bottom: 1.5rem;
   }
 }
-
 @include media-breakpoint-down(sm) {
   #products,.featured-products,.product-accessories  {
     .thumbnail-container {

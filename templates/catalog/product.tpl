@@ -51,7 +51,7 @@
     <meta itemprop="url" content="{$product.url}">
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 column-left">
         {block name='page_content_container'}
           <section class="page-content" id="content">
             {block name='page_content'}
@@ -75,10 +75,10 @@
           </section>
         {/block}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 column-right">
           {block name='page_header_container'}
             {block name='page_header'}
-              {include file='catalog/_partials/product-cover-thumbnails2.tpl'}
+              {include file='catalog/_partials/product-cover-thumbnails.tpl'}
               <h1 class="h1" itemprop="name">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
             {block name='product_description_short'}
