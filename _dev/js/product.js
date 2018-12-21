@@ -30,6 +30,8 @@ $(document).ready(function () {
   createInputFile();
   coverImage();
   imageScrollBox();
+  handleVariantChange();
+
 
   prestashop.on('updatedProduct', function (event) {
     createInputFile();
@@ -57,6 +59,9 @@ $(document).ready(function () {
         $('.js-qv-product-cover').prop('src', $(event.currentTarget).data('image-large-src'));
       }
     );
+
+    handleVariantChange();
+
   }
 
   function imageScrollBox()
@@ -114,4 +119,14 @@ $(document).ready(function () {
       });
     });
   }
+
+
+  function handleVariantChange()
+  {
+      prestashop.on('updateProduct', function () {
+      $('.column-left .product-cover .layer').css("opacity", "1");
+      $('.product-cover .material-icons').html("sync");
+    });
+  }
+
 });

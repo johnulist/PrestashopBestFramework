@@ -95,4 +95,20 @@
    .product-quantity .qty {
     display: flex;
    }
+
+   .column-right .product-cover{
+    display: none;
+   }
+
+   .column-left .js-qv-mask.mask{
+    display: none;
+   }
   
+
+   #category #left-column {
+     background-color: #F2F2F2;
+   }
+
+   .block-categories {
+    margin-top: 1.563rem;
+  }
